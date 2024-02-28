@@ -147,12 +147,12 @@ class branch {
 public:
     
     
-    menu(int id, string a, int ml, int sl, int cl)
+    branch(int id, string a, int ml, int sl, int cl)
         {ID=id;
         adrress=a; 
         menulist=ml;
         stocklist=sl;
-         customer=cl;
+         customerlist=cl;
         }
 
     
