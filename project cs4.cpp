@@ -73,11 +73,117 @@ public:
     { stocks = s; }
 };
 
+class customer {
+
+    int ID;
+    string name;
+    int phone;
+
+public:
+    
+    
+ customer(int id, string n, int p)
+        {ID=id;
+        name=n; 
+        phone=p;
+        }
+
+    
+    int getID() 
+    { return ID; }
+    string getname() 
+    { return name; }
+    int getphone() 
+    { return phone; }
+
+    
+    void setID(int id)
+    { ID = id; }
+    void setname(string n) 
+    { name = n; }
+    void setphone(int p)
+    { phone = p; }
+};
+
+class menu {
+
+    int ID;
+    string name;
+    int foodlist;
+
+public:
+    
+    
+    menu(int id, string n, int fl)
+        {ID=id;
+        name=n; 
+        foodlist=fl;
+        }
+
+    
+    int getID() 
+    { return ID; }
+    string getname() 
+    { return name; }
+    int getfoodlist() 
+    { return foodlist; }
+
+    
+    void setID(int id)
+    { ID = id; }
+    void setname(string n) 
+    { name = n; }
+
+};
+
+class branch {
+
+    int ID;
+    string address;
+    int menulist;
+    int stocklist;
+    int customerlist;
+
+public:
+    
+    
+    menu(int id, string a, int ml, int sl, int cl)
+        {ID=id;
+        adrress=a; 
+        menulist=ml;
+        stocklist=sl;
+         customer=cl;
+        }
+
+    
+    int getID() 
+    { return ID; }
+    string getaddress() 
+    { return address; }
+    int getmenulist() 
+    { return menulist; }
+     int getstocklist() 
+    { return stocklist; }
+    int customerlist() 
+    { return customerlist; }
+
+
+    
+    void setID(int id)
+    { ID = id; }
+    void setaddress(string a) 
+    { address = a; }
+    
+};
+
 int main() {
     
     Food breakfastItem(1, "Pancakes", 300, 5.99);
-    Stock breakfastStock(1, "breakfastItem", 50);
-
+    Stock breakfastStock(2, "breakfastItem", 50);
+    customer breakfastItem(3, "Latifa", 0512345);
+    menu breakfastItem(4, "frenchToast", 7);
+    branch breakfastItem(5, "Almajmaah", "breakfast", 50, 8);
+    
     cout << "Item: " << breakfastStock.getFood()<<breakfastItem.getName() << endl;
     cout << "Calories: " << breakfastStock.getFood()<<breakfastItem.getCalories() << endl;
     cout << "Price: $" << breakfastStock.getFood()<<breakfastItem.getPrice() << endl;
