@@ -1,3 +1,4 @@
+// Online C++ compiler to run C++ program online
 #include <iostream>
 #include <string>
 
@@ -12,7 +13,6 @@ class Food {
     double price;
 
 public:
-
     
     Food(int id, string n, int cal, double p)
     {ID=id; 
@@ -40,6 +40,23 @@ public:
     void setPrice(double p)
     { price = p; }
 };
+class FoodNode {
+	public:
+		double data;
+		FoodNode*next;
+	};
+class FoodList {
+	public:
+		FoodList(void) { head = NULL;}
+		~FoodList(void); bool isEmpty() {return head == NULL;}
+		FoodNode*insertNode( int index, double x);
+		int FindNode( double x);
+		int DeletNode(double x);
+		void displayList(void);
+		private:
+			FoodNode*head;
+};
+
 
 class Stock {
 
@@ -72,17 +89,36 @@ public:
     void setStock(int s)
     { stocks = s; }
 };
+class StockNode {
+	public:
+		double data;
+		StockNode*next;
+	};
+class StockList {
+	public:
+		StockList(void) { head = NULL;}
+		~StockList(void); bool isEmpty() {return head == NULL;}
+		StockNode*insertNode( int index, double x);
+		int FindNode( double x);
+		int DeletNode(double x);
+		void displayList(void);
+		private:
+			StockNode*head;
+};
 
-class customer {
+
+
+
+class Customer {
 
     int ID;
     string name;
     int phone;
-
+    
 public:
     
     
- customer(int id, string n, int p)
+ Customer(int id, string n, int p)
         {ID=id;
         name=n; 
         phone=p;
@@ -104,20 +140,40 @@ public:
     void setphone(int p)
     { phone = p; }
 };
+class CustomerNode {
+	public:
+		double data;
+		CustomerNode*next;
+	};
+class CustomerList {
+	public:
+		CustomerList(void) { head = NULL;}
+		~CustomerList(void); bool isEmpty() {return head == NULL;}
+		CustomerNode*insertNode( int index, double x);
+		int FindNode( double x);
+		int DeletNode(double x);
+		void displayList(void);
+		private:
+			CustomerNode*head;
+};
 
-class menu {
+
+
+
+
+class Menu {
 
     int ID;
     string name;
-    int foodlist;
+    int FoodList;
 
 public:
     
     
-    menu(int id, string n, int fl)
+    Menu(int id, string n, int fl)
         {ID=id;
         name=n; 
-        foodlist=fl;
+        FoodList=fl;
         }
 
     
@@ -125,8 +181,8 @@ public:
     { return ID; }
     string getname() 
     { return name; }
-    int getfoodlist() 
-    { return foodlist; }
+    int getFoodList() 
+    { return FoodList; }
 
     
     void setID(int id)
@@ -135,24 +191,44 @@ public:
     { name = n; }
 
 };
+class MenuNode {
+	public:
+		double data;
+		MenuNode*next;
+	};
+class MenuList {
+	public:
+		MenuList(void) { head = NULL;}
+		~MenuList(void); bool isEmpty() {return head == NULL;}
+		MenuNode*insertNode( int index, double x);
+		int FindNode( double x);
+		int DeletNode(double x);
+		void displayList(void);
+		private:
+			MenuNode*head;
+};
 
-class branch {
+
+
+
+
+class Branch {
 
     int ID;
     string address;
-    int menulist;
-    int stocklist;
-    int customerlist;
+    int MenuList;
+    int StockList;
+    int CustomerList;
 
 public:
     
-    
-    branch(int id, string a, int ml, int sl, int cl)
-        {ID=id;
-        adrress=a; 
-        menulist=ml;
-        stocklist=sl;
-         customerlist=cl;
+    Branch(int id, string a, int ml, int sl, int cl)
+        {
+        ID=id;
+        address=a; 
+        MenuList=ml;
+        StockList=sl;
+        CustomerList=cl;
         }
 
     
@@ -160,12 +236,12 @@ public:
     { return ID; }
     string getaddress() 
     { return address; }
-    int getmenulist() 
-    { return menulist; }
-     int getstocklist() 
-    { return stocklist; }
-    int customerlist() 
-    { return customerlist; }
+    int getMenuList() 
+    { return MenuList; }
+     int getStockList() 
+    { return StockList; }
+    int getCustomerList() 
+    { return CustomerList; }
 
 
     
@@ -175,20 +251,48 @@ public:
     { address = a; }
     
 };
+class BranchNode {
+	public:
+		double data;
+		BranchNode*next;
+	};
+class BranchList {
+	public:
+		BranchList(void) { head = NULL;}
+		~BranchList(void); bool isEmpty() {return head == NULL;}
+		BranchNode*insertNode( int index, double x);
+		int FindNode( double x);
+		int DeletNode(double x);
+		void displayList(void);
+		private:
+			BranchNode*head;
+};
+
+
+
 
 int main() {
     
-    Food breakfastItem(1, "Pancakes", 300, 5.99);
-    Stock breakfastStock(2, "breakfastItem", 50);
-    customer breakfastItem(3, "Latifa", 0512345);
-    menu breakfastItem(4, "frenchToast", 7);
-    branch breakfastItem(5, "Almajmaah", "breakfast", 50, 8);
     
-    cout << "Item: " << breakfastStock.getFood()<<breakfastItem.getName() << endl;
-    cout << "Calories: " << breakfastStock.getFood()<<breakfastItem.getCalories() << endl;
-    cout << "Price: $" << breakfastStock.getFood()<<breakfastItem.getPrice() << endl;
-    cout << "Stock: " << breakfastStock.getStock() << endl;
-
+    cout << "Food name: " << food1.getName() << "\n Price: $" << food1.getPrice() << endl;
+    cout << "\tStock of " << stock1.getFood() << ": " << stock1.getStock() << endl;
+    cout << "Customer name: " << customer1.getname() << "\t, Phone: " << customer1.getphone() << endl;
+    cout << "Menu name: " << menu1.getname() << "\n Number of food items: " << menu1.getfoodlist() << endl;
+    cout << "Branch address: " << branch1.getaddress() << endl;
+    
+    
+    
+    
+    LinkList CustomerList;
+    
+    LinkList FoodList;
+    
+    LinkList StockList;
+    
+    LinkList MenuList;
+    
+    LinkList BranchList;
+   
+    
     return 0;
 }
-
